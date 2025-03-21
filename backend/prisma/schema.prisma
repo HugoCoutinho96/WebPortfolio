@@ -14,25 +14,25 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
-model Tecnologia{
-  id Int @id @default(autoincrement())
-  nome String
-  destaque Boolean @default(false)
+model Tecnologia {
+  id        Int       @id @default(autoincrement())
+  nome      String
   descricao String
-  imagem String
-  Projetos Projeto[]
+  imagem    String
+  destaque  Boolean   @default(false)
+  projetos  Projeto[]
 
   @@map("tecnologias")
 }
 
-model Projeto{
-  id Int @id @default(autoincrement())
-  nome String
-  descricao String
-  imagens String[]
-  nivel Int
-  tipo String
-  destaque Boolean @default(false)
+model Projeto {
+  id          Int          @id @default(autoincrement())
+  nome        String
+  descricao   String
+  imagens     String[]
+  nivel       Int
+  tipo        String
+  destaque    Boolean      @default(false)
   repositorio String
   tecnologias Tecnologia[]
 
