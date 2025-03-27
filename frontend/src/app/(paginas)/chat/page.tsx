@@ -2,7 +2,7 @@
 import ConteudoMD from "@/components/shared/ConteudoMD"
 import useChat from "@/hooks/useChat"
 import Image from "next/image"
-import { useState } from "react"
+import { ChangeEvent, KeyboardEvent, useState } from "react"
 
 export default function Chat(){
 
@@ -34,10 +34,10 @@ export default function Chat(){
                 type="text"
                 value={texto}
                 className="border border-gray-700 rounded p-2"
-                onChange={(e:any) => {
+                onChange={(e:ChangeEvent<HTMLInputElement>) => {
                     setTexto(e.target.value)
                 }}
-                onKeyDown={(e:any) => {
+                onKeyDown={(e:KeyboardEvent<HTMLInputElement>) => {
                     if(e.key === 'Enter'){
                         adicionarMensagem(texto)
                         setTexto("")

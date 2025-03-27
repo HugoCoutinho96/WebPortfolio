@@ -1,4 +1,4 @@
-import Mensagem from "@/model/Mensagem"
+import Mensagem from "@/Model/Mensagem"
 import ConteudoMD from "../shared/ConteudoMD"
 import Image from "next/image"
 
