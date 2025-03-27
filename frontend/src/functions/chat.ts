@@ -1,5 +1,5 @@
 "use server"
-import Mensagem from "@/model/Mensagem"
+import Mensagem from "@/Model/Mensagem"
 
 export default async function conversar(
 	chatId: string,
@@ -19,6 +19,7 @@ export default async function conversar(
 		}),
 	})
 
-	const msg = await resposta.json()
-	return msg.resposta
+	const raw = await resposta.text()
+	const msg = await JSON.parse(raw)
+	return msg['Resposta:']
 }

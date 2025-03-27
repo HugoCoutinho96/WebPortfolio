@@ -1,6 +1,6 @@
 import { Id } from "@core"
 import useLocalStorage from "./useLocalStorage"
-import Mensagem from "@/model/Mensagem"
+import Mensagem from "@/Model/Mensagem"
 import conversar from "@/functions/chat"
 import { useState } from "react"
 
@@ -23,7 +23,7 @@ export default function useChat() {
 
 			const resposta = await conversar(chatId, novaMensagem)
 
-			if (!resposta) return
+			if (!resposta) return alert("errado" + resposta)
 
 			const mensagemResposta: Mensagem = {
 				id: Id.gerar(),
